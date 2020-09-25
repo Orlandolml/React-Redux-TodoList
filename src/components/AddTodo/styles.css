@@ -1,0 +1,25 @@
+.todoInput {
+  display: flex;
+  min-width: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+.todoInput input,
+.todoInput button {
+  padding: 8px;
+  border: none;
+  font-size: 32px;
+  background: white;
+}
+
+.todoButton {
+  width: 50px;
+  cursor: pointer;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.todoButton:hover {
+  background: #41da80;
+}

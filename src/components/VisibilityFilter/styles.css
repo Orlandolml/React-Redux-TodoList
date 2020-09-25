@@ -1,0 +1,36 @@
+select {
+    border: none;
+    outline: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearence: none;
+}
+
+.filterOption {
+    margin: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+select {
+    width: 160px;
+    padding: 16px;
+    cursor: pointer;
+    color: #0022e2;
+}
+
+.filterOption::after {
+    content: "\25BC";
+    position: absolute;
+    background: #0000ff;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.filterOption:hover::after {
+    color: #0000ff;
+    background: white;
+}

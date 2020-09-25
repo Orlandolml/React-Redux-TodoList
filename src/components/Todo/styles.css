@@ -1,0 +1,66 @@
+#todo {
+  margin: 8px;
+  padding: 5px;
+  display: flex;
+  color: black;
+  font-size: 24px;
+  background: white;
+  border-radius: 10px;
+  align-items: center;
+  transition: all 0.5s ease;
+  justify-content: space-between;
+}
+
+#todo li {
+  flex: 1;
+  display: flex;
+  padding: 0px 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#todoCompleted {
+  margin: 8px;
+  opacity: 0.5;
+  padding: 5px;
+  color: black;
+  font-size: 24px;
+  background: white;
+  border-radius: 10px;
+  align-items: center;
+  transition: all 0.5s ease;
+  text-decoration: line-through;
+  justify-content: space-between;
+}
+
+#todoCompleted li {
+  flex: 1;
+  display: flex;
+  padding: 0px 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkButton,
+.trashButton {
+  border: none;
+  padding: 16px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  justify-content: center;
+}
+
+.checkButton {
+  margin-right: 10px;
+  background: #3ad422;
+}
+
+.trashButton {
+  background: #e44c4c;
+}
+
+.fall {
+  opacity: 0;
+  transform: translateY(128px) rotateX(20deg);
+}
