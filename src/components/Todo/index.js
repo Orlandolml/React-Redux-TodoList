@@ -13,30 +13,32 @@ class Todo extends React.Component {
     };
   }
 
+  onClickHandler = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      isDeleted: true,
+    }));
+  };
+
+  removeTodoHandler = (e) => {
+    if (!this.state.alreadyTransitioned && e.propertyName === "transform") {
+      this.props.removeTodo(this.props.todo.id);
+
+      this.setState((prevState) => ({
+        ...prevState,
+        alreadyTransitioned: true,
+      }));
+    }
+  };
+
   render() {
-    const { todo, toggleTodo, removeTodo } = this.props;
-
-    const onClickHandler = () => {
-      this.setState({
-        isDeleted: true,
-      });
-    };
-
-    const removeTodoHandler = (e) => {
-      if (!this.state.alreadyTransitioned && e.propertyName === "transform") {
-        removeTodo(todo.id);
-
-        this.setState({
-          alreadyTransitioned: true,
-        });
-      }
-    };
+    const { todo, toggleTodo } = this.props;
 
     return (
       <div
+        onTransitionEnd={this.removeTodoHandler}
         className={this.state.isDeleted ? "fall" : ""}
         id={todo.completed ? "todoCompleted" : "todo"}
-        onTransitionEnd={removeTodoHandler}
       >
         <li>
           <p>{todo.text}</p>
@@ -44,7 +46,7 @@ class Todo extends React.Component {
             <button className="checkButton" onClick={() => toggleTodo(todo.id)}>
               <FontAwesomeIcon icon="clipboard-check" />
             </button>
-            <button className="trashButton" onClick={onClickHandler}>
+            <button className="trashButton" onClick={this.onClickHandler}>
               <FontAwesomeIcon icon="trash-alt" />
             </button>
           </div>

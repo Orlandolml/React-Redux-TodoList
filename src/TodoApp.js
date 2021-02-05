@@ -13,23 +13,21 @@ import VisibilityFilter from "./components/VisibilityFilter";
 
 library.add(fas, faPlusSquare, faCheckSquare, faTrash);
 
-class todoApp extends React.Component {
+class TodoApp extends React.Component {
   render() {
     return (
-      <div >
+      <div>
         <header>
           <h1 className="text">Todo-List Orlando</h1>
         </header>
-
-        <div className="form ">
+        <div className="form">
           <AddTodo />
           <VisibilityFilter />
         </div>
-
         <TodoList />
       </div>
     );
   }
 }
 
-export default todoApp;
+export default TodoApp;

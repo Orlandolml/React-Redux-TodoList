@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { addTodo } from "../../redux/actionCreators";
 import "./styles.css";
+import { addTodo } from "../../redux/actionCreators";
 
 class AddTodo extends React.Component {
   constructor(props) {
@@ -11,9 +11,7 @@ class AddTodo extends React.Component {
     this.state = { input: "" };
   }
 
-  updateInput = (input) => {
-    this.setState({ input });
-  };
+  updateInput = (input) => this.setState({ input });
 
   handleAddTodo = () => {
     this.props.addTodo(this.state.input);
@@ -24,10 +22,10 @@ class AddTodo extends React.Component {
     return (
       <div className="todoInput">
         <input
+          className="input"
+          value={this.state.input}
           placeholder="Enter a new task"
           onChange={(e) => this.updateInput(e.target.value)}
-          value={this.state.input}
-          className="input"
         />
         <button className="todoButton" onClick={this.handleAddTodo}>
           <FontAwesomeIcon className="icon" icon="plus-square" />
